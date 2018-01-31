@@ -1,0 +1,5 @@
+ui.hide_hpto=true
+audio.sync_bitrate_enumeration=4
+audio.play_bitrate_enumeration=4
+ui.show_friend_feed=false
+gaia.attached_device_id="a71a4e322c1b09636b6fbc7d3e82ef775e4c7ff6"

@@ -1,0 +1,110 @@
+2017-11-09 22:41:46	-->	simenlk (~simenlk@194.182.9.46.customer.cdi.no) has joined ##C
+2017-11-09 22:41:46	--	Topic for ##C is "C Programming | PASTE (>3 lines): http://ideone.com/ | WIKI: http://www.iso-9899.info/ | BOOKS: http://www.iso-9899.info/wiki/Books | C2X Charter: http://www.open-std.org/jtc1/sc22/wg14/www/docs/n2086.htm | Test your C knowledge in #cjeopardy | Off-topic chat in ##c-offtopic"
+2017-11-09 22:41:46	--	Topic set by twkm on on., 14 juni 2017 22:52:54
+2017-11-09 22:41:47	--	Channel ##C: 1031 nicks (1 op, 0 voices, 1030 normals)
+2017-11-09 22:41:47	--	PvNotice(ChanServ): Welcome to ##c! We engage in C programming discussions at all levels of expertise; don't hesitate to ask your question. If applicable, please prepare a testcase and paste it at http://ideone.com. We don't know about C++ (##c++) or C# (##csharp).
+2017-11-09 22:41:47	--	URL for ##c: http://www.iso-9899.info/
+2017-11-09 22:41:48	--	Channel created on sø., 26 nov. 2006 07:42:39
+2017-11-09 22:42:18	simenlk	test
+2017-11-09 22:43:27	<--	SpinTensor (~SpinTenso@i577A205B.versanet.de) has quit (Quit: WeeChat 1.9)
+2017-11-09 22:44:58	<--	psf (uid164389@gateway/web/irccloud.com/x-ugdfjcgqbkybshto) has quit (Quit: Connection closed for inactivity)
+2017-11-09 22:46:41	-->	melita (~melita@2620:10d:c090:200::4:1c2c) has joined ##C
+2017-11-09 22:47:55	<--	mpeg4 (~mpegN@122.83.6.51.dyn.plus.net) has quit (Quit: Leaving)
+2017-11-09 22:48:49	-->	BuGoNee (~BuGoNee@116.236.249.238) has joined ##C
+2017-11-09 22:49:36	<--	Q11 (~B@185.65.134.177) has quit (Remote host closed the connection)
+2017-11-09 22:50:27	-->	bertman (~bert@unaffiliated/bertman) has joined ##C
+2017-11-09 22:50:59	<--	melita (~melita@2620:10d:c090:200::4:1c2c) has quit (Ping timeout: 258 seconds)
+2017-11-09 22:51:03	-->	Cyp_ (~Cyp_@x1-6-e8-94-f6-cd-57-25.cpe.webspeed.dk) has joined ##C
+2017-11-09 22:52:33	<--	rpgsimmaster (~irc@ip-64-140-118-69.user.start.ca) has quit (Ping timeout: 248 seconds)
+2017-11-09 22:52:58	<--	Jesin (~Jesin@pool-108-51-89-131.washdc.fios.verizon.net) has quit (Quit: Leaving)
+2017-11-09 22:53:03	esselfe	,chk
+2017-11-09 22:53:04	@candide	[##c-offtopic] chk is blah blah
+2017-11-09 22:53:11	<--	esselfe (~bsfc@unaffiliated/esselfe) has quit (Quit: done)
+2017-11-09 22:53:12	<--	bps (~bps@0x4dd406ae.adsl.cybercity.dk) has quit (Ping timeout: 240 seconds)
+2017-11-09 22:53:23	-->	Kingsquee (~kingsquee@d154-5-141-203.bchsia.telus.net) has joined ##C
+2017-11-09 22:53:52	<--	BuGoNee (~BuGoNee@116.236.249.238) has quit (Ping timeout: 260 seconds)
+2017-11-09 22:54:23	-->	Wetmelon (~wetmelon@97-82-134-71.dhcp.hckr.nc.charter.com) has joined ##C
+2017-11-09 22:55:27	-->	bps (~bps@0x4dd406ae.adsl.cybercity.dk) has joined ##C
+2017-11-09 22:56:32	-->	Jesin (~Jesin@pool-108-51-89-131.washdc.fios.verizon.net) has joined ##C
+2017-11-09 22:58:10	<--	phao (~phao@177.128.111.72) has quit (Quit: Leaving)
+2017-11-09 23:00:28	<--	Jibz (~Jibz@unaffiliated/jibz) has quit (Quit: Leaving)
+2017-11-09 23:01:35	<--	nor (~rnrbbns19@unaffiliated/nor) has quit (Ping timeout: 248 seconds)
+2017-11-09 23:02:05	<--	maxdml (~max@24.246.110.93) has quit (Ping timeout: 240 seconds)
+2017-11-09 23:02:09	<--	Shugz (~Shugz@207.62.152.190) has quit (Ping timeout: 248 seconds)
+2017-11-09 23:02:19	<--	bolt (~r00t@unaffiliated/bolt) has quit (Read error: Connection reset by peer)
+2017-11-09 23:02:50	<--	Xrayez (~Xrayez@79.110.128.83) has quit (Read error: Connection reset by peer)
+2017-11-09 23:02:58	<--	brad_mssw (~brad@66.129.88.50) has quit (Quit: Leaving)
+2017-11-09 23:03:13	-->	xpen (~xpen@14.63.224.71) has joined ##C
+2017-11-09 23:03:42	<--	King_Hual (~Hual@unaffiliated/king-hual/x-1207580) has quit (Read error: Connection reset by peer)
+2017-11-09 23:03:50	<--	Fantonaut (~tadaaa@nat-wh-wz4-12.rz.uni-karlsruhe.de) has quit (Remote host closed the connection)
+2017-11-09 23:04:17	-->	bolt (~r00t@unaffiliated/bolt) has joined ##C
+2017-11-09 23:04:55	<--	spew (uid195861@gateway/web/irccloud.com/x-tiaugjpfkylypfxk) has quit
+2017-11-09 23:05:49	<--	BGL (ninety@75-149-171-58-Washington.hfc.comcastbusiness.net) has quit (Read error: Connection reset by peer)
+2017-11-09 23:05:56	<--	pewpew (~pewpew@185.112.157.212) has quit (Quit: Lost terminal)
+2017-11-09 23:06:25	<--	thecoffemaker_ (~thecoffem@210-119-245-190.fibertel.com.ar) has quit (Quit: So long and thanks for all the fish!)
+2017-11-09 23:06:56	-->	thecoffemaker (~thecoffem@unaffiliated/thecoffemaker) has joined ##C
+2017-11-09 23:07:24	-->	enterprisey (~enterpris@wikipedia/enterprisey) has joined ##C
+2017-11-09 23:08:01	<--	xpen (~xpen@14.63.224.71) has quit (Ping timeout: 248 seconds)
+2017-11-09 23:08:02	<--	kapitalist (~kapitalis@78-73-113-101-no162.tbcn.telia.com) has quit (Read error: Connection reset by peer)
+2017-11-09 23:08:40	<--	sdkask (~sdkask@177.79.42.67) has quit (Read error: Connection reset by peer)
+2017-11-09 23:08:49	-->	vlab (~vlab@unaffiliated/vlab) has joined ##C
+2017-11-09 23:09:44	-->	rungcc (~rungcc@179.55.125.233) has joined ##C
+2017-11-09 23:10:12	<--	rungcc_ (~rungcc@179.55.125.233) has quit (Ping timeout: 240 seconds)
+2017-11-09 23:11:52	<--	selim (~dprmiles@host-2-100-165-129.as13285.net) has quit (Ping timeout: 240 seconds)
+2017-11-09 23:12:42	-->	sdkask (~sdkask@177.79.40.122) has joined ##C
+2017-11-09 23:15:07	<--	vlab (~vlab@unaffiliated/vlab) has quit (Quit: Leaving)
+2017-11-09 23:16:23	-->	freakazoid0223_ (~chatzilla@pool-108-52-4-148.phlapa.fios.verizon.net) has joined ##C
+2017-11-09 23:17:47	-->	r3kz (uid254589@gateway/web/irccloud.com/x-kiceqdigpijcwjki) has joined ##C
+2017-11-09 23:18:31	-->	F3rr3t (~antiquege@104-218-144-175.lfytina2.metronetinc.net) has joined ##C
+2017-11-09 23:18:40	<--	F3rr3t (~antiquege@104-218-144-175.lfytina2.metronetinc.net) has quit (Remote host closed the connection)
+2017-11-09 23:18:57	<--	sarp (~sarp@152.3.43.22) has quit (Ping timeout: 260 seconds)
+2017-11-09 23:19:07	-->	F3rr3t (~antiquege@104-218-144-175.lfytina2.metronetinc.net) has joined ##C
+2017-11-09 23:19:21	<--	freakazoid0223 (~chatzilla@pool-108-52-4-148.phlapa.fios.verizon.net) has quit (Ping timeout: 258 seconds)
+2017-11-09 23:19:32	--	freakazoid0223_ is now known as freakazoid0223
+2017-11-09 23:19:55	VLetrmx	,quick
+2017-11-09 23:19:55	@candide	Quick, somebody ask a C question!
+2017-11-09 23:20:17	-->	czart_ (~czart@acfa170.neoplus.adsl.tpnet.pl) has joined ##C
+2017-11-09 23:20:36	-->	Psybur (~broheim@pool-108-44-203-65.clppva.fios.verizon.net) has joined ##C
+2017-11-09 23:21:28	latch	,ud C
+2017-11-09 23:21:29	@candide	1/10: (+1942/-480) C is for cookie, that's good enough for me. «when you take a bite from a cookie, it looks like a C»
+2017-11-09 23:21:46	<--	enterprisey (~enterpris@wikipedia/enterprisey) has quit (Remote host closed the connection)
+2017-11-09 23:23:17	<--	gagbo (~gagbo@unaffiliated/gagbo) has quit (Quit: I'm out !)
+2017-11-09 23:23:41	<--	czart__ (~czart@acfd74.neoplus.adsl.tpnet.pl) has quit (Ping timeout: 240 seconds)
+2017-11-09 23:24:08	-->	find0x90 (~find0x90@cpe-174-96-176-23.columbus.res.rr.com) has joined ##C
+2017-11-09 23:26:19	<--	Sarge123 (~Sarge123@HSI-KBW-149-172-217-21.hsi13.kabel-badenwuerttemberg.de) has quit (Quit: Nettalk6 - www.ntalk.de)
+2017-11-09 23:27:40	<--	rungcc (~rungcc@179.55.125.233) has quit (Quit: Leaving)
+2017-11-09 23:28:14	Sandlayth	hello guys
+2017-11-09 23:28:30	Sandlayth	is it possible to return an anonymous pointer?
+2017-11-09 23:29:07	muffindrake	Sandlayth: What is an anonymous pointer?
+2017-11-09 23:29:10	tlahtoani	^
+2017-11-09 23:29:11	jp	Sandlayth: you mean a `void *`?
+2017-11-09 23:29:25	Sandlayth	nope, sorry, i just asked a dumb question
+2017-11-09 23:29:57	-->	rpgsimmaster (~irc@CPEbc1401e3c083-CMbc1401e3c080.cpe.net.cable.rogers.com) has joined ##C
+2017-11-09 23:31:02	latch	typedef void *anonymous;
+2017-11-09 23:31:08	Sandlayth	:>
+2017-11-09 23:32:57	<--	FlyingDemonstrat (~aaaaaaa@host86-141-174-89.range86-141.btcentralplus.com) has quit (Ping timeout: 240 seconds)
+2017-11-09 23:33:03	<--	gelignite (~gelignite@x4db58afb.dyn.telefonica.de) has quit (Quit: I have always found that mercy bears richer fruits than strict justice.)
+2017-11-09 23:33:11	mazeto	,ud C
+2017-11-09 23:33:12	@candide	1/10: (+1942/-480) C is for cookie, that's good enough for me. «when you take a bite from a cookie, it looks like a C»
+2017-11-09 23:33:16	-->	tsizz (44c190e5@gateway/web/freenode/ip.68.193.144.229) has joined ##C
+2017-11-09 23:33:17	<--	chaosruler (~chaosrule@unaffiliated/chaosruler) has quit (Remote host closed the connection)
+2017-11-09 23:33:33	tsizz	could someone help me understand caller save and callee save
+2017-11-09 23:34:07	<--	munch (pls@gateway/shell/elitebnc/x-zsvsmymhkibqmqvh) has quit (Ping timeout: 248 seconds)
+2017-11-09 23:35:00	<--	tesla_ (~tesla_@unaffiliated/tesla-/x-3847292) has quit (Quit: Exit)
+2017-11-09 23:35:14	tlahtoani	Um
+2017-11-09 23:35:45	tlahtoani	Caller save is for stuff that is pushed to the stack each time something is called. AKA it is persistent
+2017-11-09 23:36:02	tlahtoani	Wait no that is callee save
+2017-11-09 23:36:16	tlahtoani	Caller save is for stuff that only needs to be saved for a single call
+2017-11-09 23:37:55	<--	simenlk (~simenlk@194.182.9.46.customer.cdi.no) has left ##C ("WeeChat 1.4")
+2017-11-09 23:37:58	simenlk	:close
+2017-11-09 23:37:58	--	##C: Cannot send to channel
+2018-01-29 16:17:14	-->	simenlk (~simenlk@dhcp644-stud.wifi.uit.no) has joined ##C
+2018-01-29 16:17:14	--	Topic for ##C is "C Programming | PASTE (>3 lines): http://ideone.com/ | WIKI: http://www.iso-9899.info/ | BOOKS: http://www.iso-9899.info/wiki/Books | C2X Charter: http://www.open-std.org/jtc1/sc22/wg14/www/docs/n2086.htm | Test your C knowledge in #cjeopardy | Off-topic chat in ##c-offtopic"
+2018-01-29 16:17:14	--	Topic set by twkm on on., 14 juni 2017 22:52:54
+2018-01-29 16:17:14	--	Channel ##C: 984 nicks (1 op, 0 voices, 983 normals)
+2018-01-29 16:17:14	--	PvNotice(ChanServ): Welcome to ##c! We engage in C programming discussions at all levels of expertise; don't hesitate to ask your question. If applicable, please prepare a testcase and paste it at http://ideone.com. We don't know about C++ (##c++) or C# (##csharp).
+2018-01-29 16:17:14	--	URL for ##c: http://www.iso-9899.info/
+2018-01-29 16:17:16	--	Channel created on sø., 26 nov. 2006 07:42:39
+2018-01-29 16:17:20	<--	Prince781 (~Prince781@u-of-rochester-128-151-150-1.wireless.rochester.edu) has quit (Ping timeout: 252 seconds)
+2018-01-29 16:18:58	-->	GrayArea (~GrayArea@cpc73846-dals21-2-0-cust384.20-2.cable.virginm.net) has joined ##C
+2018-01-29 16:19:43	-->	azarus (~azarus@unaffiliated/azarus) has joined ##C

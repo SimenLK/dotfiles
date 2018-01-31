@@ -1,0 +1,14 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Dotfiles Syntax Highlighting",
+		"Generic Config",
+		"LaTeXTools",
+		"Package Control",
+		"Terminal"
+	]
+}

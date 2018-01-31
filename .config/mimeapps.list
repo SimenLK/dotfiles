@@ -1,0 +1,18 @@
+[Default Applications]
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
+text/x-python=sublime_text.desktop
+text/x-csrc=sublime_text.desktop
+application/javascript=sublime_text.desktop
+text/plain=sublime_text.desktop
+
+[Added Associations]
+application/x-executable=gedit.desktop;
+text/x-python=sublime_text.desktop;
+text/x-csrc=sublime_text.desktop;
+text/x-tex=sublime_text.desktop;
+application/javascript=sublime_text.desktop;
+text/plain=sublime_text.desktop;

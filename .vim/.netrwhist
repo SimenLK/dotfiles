@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/simenlk/.config/i3'
+let g:netrw_dirhist_2='/home/simenlk/.sconsify'
+let g:netrw_dirhist_3='/home/simenlk/Desktop/UIT/2.år/2.sem/INF-2201/project-1-SimenLK/.git'
+let g:netrw_dirhist_4='/usr/share/doc/polybar/config'
