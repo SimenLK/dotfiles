@@ -1,3 +1,4 @@
+" This is a test comment
 execute pathogen#infect()
 filetype plugin indent on
 
