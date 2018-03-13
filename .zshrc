@@ -1,3 +1,5 @@
+export TERM="xterm-256color"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -74,6 +76,25 @@ POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="╰$ "
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
+# Zstyle autofill
+
+zstyle ':completion:*' special-dirs true
+
+# including this ensures that new gnome-terminal tabs keep the parent `pwd` !
+
+# save path on cd
+function cd 
+{
+	builtin cd $@
+	pwd > ~/.last_dir
+}
+
+# restore last saved path
+if [ -f ~/.last_dir ]
+	echo $(<~/.last_dir)
+	then cd $(<~/.last_dir)
+fi
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -102,5 +123,8 @@ alias Franz="/opt/franz/Franz"
 alias latexreport="git clone https://github.com/SimenLK/latexreport.git; cd latexreport; source install.sh"
 
 alias i3config="vim ~/.config/i3/config"
+alias polyconfig="vim ~/.config/polybar/config"
 
 alias sshuit="ssh -X ski027@lgserv3.stud.cs.uit.no"
+
+alias studio="cd /usr/local/android-studio/bin/; ./studio.sh"
