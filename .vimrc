@@ -1,3 +1,4 @@
+execute pathogen#infect()
 filetype plugin indent on
 
 " Tap options - 4 spaces
@@ -19,8 +20,18 @@ set number
 " Do not wrap lines
 set nowrap
 
+" Split
+set splitright
+
 " Latex settings
 autocmd FileType tex setlocal wrap spell
 
 " Colorscheme
 colorscheme desert
+
+" keybinds
+nnoremap <Tab> :bnext<CR>:redraw<CR>:ls<CR>
+nnoremap <s-Tab> :bprev<CR>:redraw<CR>:ls<CR>
+
+" Syntastic
+" Temp options
