@@ -1,4 +1,1 @@
-for (int i = 0; i < ; i++)
-{
-	<++>
-}
+/home/SimenLK/.vim/skeleton/.forloop.c
