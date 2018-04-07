@@ -127,4 +127,7 @@ alias polyconfig="vim ~/.config/polybar/config"
 
 alias sshuit="ssh -X ski027@lgserv3.stud.cs.uit.no"
 
-alias studio="cd /usr/local/android-studio/bin/; ./studio.sh"
+# directory shortcuts
+
+alias project4="cd /home/simenlk/Desktop/UIT/2.år/2.sem/INF-2201/project-4-SimenLK"
+alias project5="cd /home/simenlk/Desktop/UIT/2.år/2.sem/INF-2201/project-5-SimenLK"
