@@ -34,11 +34,13 @@ colorscheme desert
 nnoremap <Tab> :bnext<CR>:redraw<CR>:ls<CR>
 nnoremap <s-Tab> :bprev<CR>:redraw<CR>:ls<CR>
 
+" Not optimal when manually tabbing
 inoremap <Tab><Tab> <Esc>/<++><Enter>"_c4l
 
 " C keybindings
 autocmd FileType c inoremap ,for <Esc>:-1read $HOME/.vim/skeleton/.forloop.c<CR>V3j=<Esc>f<la
 autocmd FileType c inoremap ,if <Esc>:-1read $HOME/.vim/skeleton/.iftest.c<CR>V3j=<Esc>f(a
+
 
 " Syntastic
 " Temp options

@@ -1,1 +1,3 @@
-/home/SimenLK/.vim/ftplugin/c.vim
+" indent style for c programming
+set autoindent
+set cindent

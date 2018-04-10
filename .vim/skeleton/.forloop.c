@@ -1,1 +1,4 @@
-/home/SimenLK/.vim/skeleton/.forloop.c
+for (int i = 0; i < ; i++)
+{
+	<++>
+}

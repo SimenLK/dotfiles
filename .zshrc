@@ -117,13 +117,21 @@ fi
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="vim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias Franz="/opt/franz/Franz"
-alias latexreport="git clone https://github.com/SimenLK/latexreport.git; cd latexreport; source install.sh"
 
+# git repos
+
+alias latexreport="git clone https://github.com/SimenLK/latexreport.git; cd latexreport; source install.sh"
+alias dotfiles="git clone https://github.com/SimenLK/dotfiles.git"
+
+# Config shortcuts
+
+alias zshconfig="vim ~/.zshrc"
 alias i3config="vim ~/.config/i3/config"
 alias polyconfig="vim ~/.config/polybar/config"
+
+# ssh 
 
 alias sshuit="ssh -X ski027@lgserv3.stud.cs.uit.no"
 

@@ -1,1 +1,4 @@
-/home/SimenLK/.vim/skeleton/.iftest.c
+if ()
+{
+	<++>
+}
