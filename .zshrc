@@ -137,5 +137,5 @@ alias sshuit="ssh -X ski027@lgserv3.stud.cs.uit.no"
 
 # directory shortcuts
 
-alias project4="cd /home/simenlk/Desktop/UIT/2.år/2.sem/INF-2201/project-4-SimenLK"
-alias project5="cd /home/simenlk/Desktop/UIT/2.år/2.sem/INF-2201/project-5-SimenLK"
+alias project4="cd /home/simenlk/Documents/UIT/2.år/2.sem/INF-2201/project-4-SimenLK"
+alias project5="cd /home/simenlk/Documents/UIT/2.år/2.sem/INF-2201/project-5-SimenLK"
