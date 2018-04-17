@@ -38,6 +38,9 @@ colorscheme desert
 nnoremap <Tab> :bnext<CR>:redraw<CR>:ls<CR>
 nnoremap <s-Tab> :bprev<CR>:redraw<CR>:ls<CR>
 
+" Goyo
+map <F10> :Goyo<CR>
+
 " TeX shortcuts
 autocmd FileType tex nnoremap <C-b> :w<CR> :! pdflatex %<CR>
 
@@ -75,10 +78,8 @@ set statusline+=%#CursorColumn#
 set statusline+=%{StatuslineGit()}
 set statusline+=%#PmenuSel#
 set statusline+=\ %f
-set statusline+=%m%r%h%w\  
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
+set statusline+=\ %2*[%M%R%H%W]%*
+" Right side of statusline 
 set statusline+=%#PmenuSel#
 set statusline+=%=
 set statusline+=\ %y
