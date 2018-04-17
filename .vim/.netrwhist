@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/home/simenlk/Desktop/UIT/2.år/2.sem/INF-2201/project-4-SimenLK'
 let g:netrw_dirhist_2='/home/simenlk/.vim/skeleton'
 let g:netrw_dirhist_3='/home/simenlk/.vim'
+let g:netrw_dirhist_4='/home/simenlk/Documents/UIT/2.år/2.sem/INF-2201/project-4-SimenLK'
+let g:netrw_dirhist_5='/home/simenlk/Documents/UIT/2.år/2.sem/INF-2201/project-4-SimenLK/src'
