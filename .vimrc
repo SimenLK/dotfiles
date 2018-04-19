@@ -29,7 +29,8 @@ set wildmenu
 " set wildmode=list:longest,full
 
 " Latex settings
-autocmd FileType tex setlocal wrap spell
+" NB: Don't need it because of spell shortcuts
+"autocmd FileType tex setlocal wrap spell
 
 " Colorscheme
 colorscheme desert
@@ -37,6 +38,9 @@ colorscheme desert
 " keybinds
 nnoremap <Tab> :bnext<CR>:redraw<CR>:ls<CR>
 nnoremap <s-Tab> :bprev<CR>:redraw<CR>:ls<CR>
+
+map <F6> :setlocal spell! spelllang=en_us<CR>
+map <F7> :setlocal spell! spelllang=nb<CR>
 
 " Goyo
 map <F10> :Goyo<CR>
@@ -55,6 +59,8 @@ autocmd FileType c inoremap ,i <Esc>:-1read $HOME/.vim/skeleton/.iftest.c<CR>V3j
 autocmd FileType c inoremap ,e <Esc>:-1read $HOME/.vim/skeleton/.else.c<CR>V3j=<Esc>1jo
 autocmd FileType c inoremap ,ie <Esc>:-1read $HOME/.vim/skeleton/.ifelse.c<CR>V7j=<Esc>f(a
 autocmd FileType c inoremap ,ei <Esc>:-1read $HOME/.vim/skeleton/.elseif.c<CR>V7j=<Esc>f(a
+
+autocmd FileType c inoremap ,w while()<CR>{<CR><++><CR>}<Esc>3kf(a
 
 
 " Statusline 

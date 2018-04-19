@@ -1,0 +1,50 @@
+shell .
+shell java -jar TechnicLauncher.jar 
+shell unzip 06_Hashmap.zip
+open_with google_chrome
+open_with 1
+search uit
+rename UiT-ski027-transcript.pdf
+search us
+search goog
+touch ranger.desktop
+
+shell sudo touch /usr/share/applications/ranger.desktop
+open_with vim
+shell sudo vim ranger.desktop
+open_with 0
+shell pdflatex semesteroppgave6.tex
+mkdir docs
+mkdir semesteroppgave
+bulkrename UHC_ski027
+open_with 
+rename memory_backup.c
+rename memory_backup1.c
+rename memory.c
+shell gcl https://github.com/junegunn/goyo.vim
+set colorscheme jungle
+set colorscheme snow
+set colorscheme solarized
+set colorscheme default
+find .conf
+shell ranger --copy-config=all
+shell source rc.conf
+search .config
+search 
+search ranger
+mkdir test
+search config
+find i3
+find .mu
+open_with 2
+find Doc
+delete
+e
+find g
+find .confi
+find rang
+find 
+find kernel
+open_with subl
+open_with google-chrome
+find .te
