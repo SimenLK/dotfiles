@@ -5,4 +5,4 @@ rsync -rv --exclude 'install.sh' \
 			--exclude '.git'\
 			--exclude 'README.md'\
 			--exclude '.gitignore'\
-			$PWD $HOME
+			$PWD/ $HOME
