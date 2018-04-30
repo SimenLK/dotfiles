@@ -1,24 +1,3 @@
-shell .
-shell java -jar TechnicLauncher.jar 
-shell unzip 06_Hashmap.zip
-open_with google_chrome
-open_with 1
-search uit
-rename UiT-ski027-transcript.pdf
-search us
-search goog
-touch ranger.desktop
-
-shell sudo touch /usr/share/applications/ranger.desktop
-open_with vim
-shell sudo vim ranger.desktop
-open_with 0
-shell pdflatex semesteroppgave6.tex
-mkdir docs
-mkdir semesteroppgave
-bulkrename UHC_ski027
-open_with 
-rename memory_backup.c
 rename memory_backup1.c
 rename memory.c
 shell gcl https://github.com/junegunn/goyo.vim
@@ -38,13 +17,34 @@ find i3
 find .mu
 open_with 2
 find Doc
-delete
 e
 find g
 find .confi
 find rang
-find 
 find kernel
 open_with subl
-open_with google-chrome
 find .te
+find mem
+find paging
+find bd
+shell mkdir latex ; :
+shell latexreport
+open_with google-chrome
+
+shell pwd
+terminal %
+delete
+terminal
+terminal 
+shell 
+mkdir assets
+set vcs_aware false
+find XN
+rename XNA_Game_Studio_3.1_enus.pdf
+mkdir documentation
+find 
+find dow
+find cla
+shell tar -xvzf clang+llvm-6.0.0-x86_64-linux-gnu-ubuntu-16.04.tar.xz
+find YC
+find .vim

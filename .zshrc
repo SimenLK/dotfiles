@@ -76,6 +76,10 @@ POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="╰$ "
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
+# Mutt
+
+set spoolfile = var/mail/simen
+
 # Zstyle autofill
 
 zstyle ':completion:*' special-dirs true
@@ -90,10 +94,10 @@ function cd
 }
 
 # restore last saved path
-if [ -f ~/.last_dir ]
-	echo $(<~/.last_dir)
-	then cd $(<~/.last_dir)
-fi
+#if [ -f ~/.last_dir ]
+#	echo $(<~/.last_dir)
+#	then cd $(<~/.last_dir)
+#fi
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -119,6 +123,7 @@ fi
 # Example aliases
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias Franz="/opt/franz/Franz"
+alias here="gnome-terminal $PWD"
 
 # git repos
 
@@ -127,9 +132,11 @@ alias dotfiles="git clone https://github.com/SimenLK/dotfiles.git"
 
 # Config shortcuts
 
+alias vimconfig="vim ~/.vimrc"
 alias zshconfig="vim ~/.zshrc"
 alias i3config="vim ~/.config/i3/config"
 alias polyconfig="vim ~/.config/polybar/config"
+alias rangerconfig="vim ~/.config/ranger/rc.conf"
 
 # ssh 
 
