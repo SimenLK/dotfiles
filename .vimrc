@@ -5,6 +5,7 @@ filetype plugin indent on
 " Tap options - 4 spaces
 set shiftwidth=4
 set tabstop=4
+set expandtab
 
 " Indenting
 autocmd FileType c set cindent
@@ -12,11 +13,25 @@ autocmd FileType c set cindent
 " Syntax highlighting
 syntax on
 
+" Colorscheme
+colorscheme desert
+
 " Show matching brackets
 set showmatch
+highlight MatchParen ctermbg=green
 
 " Show line numbers
 set number
+set relativenumber
+
+" Text width
+set textwidth=80
+set colorcolumn=+1
+hi ColorColumn ctermbg=0
+
+" Whitespace and tabs
+set listchars=tab:☞☞,nbsp:_,trail:⋅
+set list
 
 " Do not wrap lines
 set nowrap
@@ -26,15 +41,12 @@ set splitright
 set splitbelow
 
 " Wildmenu
-set wildmenu
-" set wildmode=list:longest,full
+" set wildmenu
+set wildmode=list:longest,full
 
 " Latex settings
 " NB: Don't need it because of spell shortcuts
 autocmd FileType tex setlocal wrap
-
-" Colorscheme
-colorscheme desert
 
 " keybinds
 nnoremap <Tab> :bnext<CR>:redraw<CR>:ls<CR>
@@ -45,13 +57,21 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 
+map <C-N> :NERDTreeToggle<CR>
+
 nnoremap <C-c> <C-w>c
+inoremap jk <Esc>
 
 map <F6> :setlocal spell! spelllang=en_us<CR>
 map <F7> :setlocal spell! spelllang=nb<CR>
 
 " Goyo
 map <F10> :Goyo<CR>
+
+" youcompleteme
+let g:ycm_min_num_of_chars_for_completion = 3
+" Temp, try again later
+let g:loaded_youcompleteme = 1
 
 " TeX shortcuts
 autocmd FileType tex nnoremap <C-b> :w<CR> :! pdflatex %<CR>
@@ -62,14 +82,14 @@ autocmd FileType c inoremap <Tab><Tab> <Esc>/<++><Enter>"_c4l
 " C settings
 
 " C snippets
-autocmd FileType c inoremap ,f <Esc>:-1read $HOME/.vim/skeleton/.forloop.c<CR>V3j=<Esc>f<la
-autocmd FileType c inoremap ,i <Esc>:-1read $HOME/.vim/skeleton/.iftest.c<CR>V3j=<Esc>f(a
-autocmd FileType c inoremap ,e <Esc>:-1read $HOME/.vim/skeleton/.else.c<CR>V3j=<Esc>1jo
-autocmd FileType c inoremap ,ie <Esc>:-1read $HOME/.vim/skeleton/.ifelse.c<CR>V7j=<Esc>f(a
-autocmd FileType c inoremap ,ei <Esc>:-1read $HOME/.vim/skeleton/.elseif.c<CR>V7j=<Esc>f(a
+autocmd FileType c inoremap ,f <Esc>:-1read $HOME/.vim/skeleton/.forloop.c<CR>Vj=<Esc>f<la
+autocmd FileType c inoremap ,i <Esc>:-1read $HOME/.vim/skeleton/.iftest.c<CR>Vj=<Esc>f(a
+autocmd FileType c inoremap ,e <Esc>:-1read $HOME/.vim/skeleton/.else.c<CR>Vj=<Esc>o
+autocmd FileType c inoremap ,ie <Esc>:-1read $HOME/.vim/skeleton/.ifelse.c<CR>V4j=<Esc>f(a
+autocmd FileType c inoremap ,ei <Esc>:-1read $HOME/.vim/skeleton/.elseif.c<CR>V4j=<Esc>f(a
 autocmd FileType c inoremap ,s <Esc>:-1read $HOME/.vim/skeleton/.switch.c<CR>V16j=<Esc>f(a
 
-autocmd FileType c inoremap ,w while()<CR>{<CR><++><CR>}<Esc>3kf(a
+autocmd FileType c inoremap ,w while()<CR><++><Esc>kf(a
 
 
 " Statusline 
@@ -103,12 +123,3 @@ set statusline+=\[%{&fileformat}\]
 set statusline+=\ %p%%
 set statusline+=\ %l:%c
 set statusline+=\ 
-
-
-" Syntastic
-
-" Default
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0

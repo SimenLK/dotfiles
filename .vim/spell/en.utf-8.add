@@ -15,3 +15,5 @@ Heapsort
 heapsort
 heapify
 dereference
+lookaside
+superblock
