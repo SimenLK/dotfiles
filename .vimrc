@@ -9,6 +9,7 @@ set expandtab
 
 " Indenting
 autocmd FileType c set cindent
+autocmd FileType haskell set smartindent
 
 " Syntax highlighting
 syntax on
@@ -16,9 +17,12 @@ syntax on
 " Colorscheme
 colorscheme desert
 
+" Background 
+set background=dark
+
 " Show matching brackets
 set showmatch
-highlight MatchParen ctermbg=green
+highlight MatchParen ctermbg=cyan
 
 " Show line numbers
 set number
@@ -27,7 +31,7 @@ set relativenumber
 " Text width
 set textwidth=80
 set colorcolumn=+1
-hi ColorColumn ctermbg=0
+hi ColorColumn ctermbg=DarkGray
 
 " Whitespace and tabs
 set listchars=tab:☞☞,nbsp:_,trail:⋅
@@ -52,10 +56,13 @@ autocmd FileType tex setlocal wrap
 nnoremap <Tab> :bnext<CR>:redraw<CR>:ls<CR>
 nnoremap <s-Tab> :bprev<CR>:redraw<CR>:ls<CR>
 
-nnoremap <C-H> <C-W><C-H>
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <C-h> :TmuxNavigateLeft<CR>
+nnoremap <silent> <C-j> :TmuxNavigateDown<CR>
+nnoremap <silent> <C-k> :TmuxNavigateUp<CR>
+nnoremap <silent> <C-l> :TmuxNavigateRight<CR>
+nnoremap <silent> <C-\> :TmuxNavigatePrevious<CR>
 
 map <C-N> :NERDTreeToggle<CR>
 
@@ -77,7 +84,7 @@ let g:loaded_youcompleteme = 1
 autocmd FileType tex nnoremap <C-b> :w<CR> :! pdflatex %<CR>
 
 " Not optimal when manually tabbing
-autocmd FileType c inoremap <Tab><Tab> <Esc>/<++><Enter>"_c4l
+" autocmd FileType c inoremap <Tab><Tab> <Esc>/<++><Enter>"_c4l
 
 " C settings
 
@@ -91,6 +98,17 @@ autocmd FileType c inoremap ,s <Esc>:-1read $HOME/.vim/skeleton/.switch.c<CR>V16
 
 autocmd FileType c inoremap ,w while()<CR><++><Esc>kf(a
 
+" Highlighting
+
+"autocmd FileType c call <SID>def_base_syntax() " autocmd Syntax may be better
+
+function! s:def_base_syntax()
+    " Simple example
+    syntax match myOperators "\(\/\|+\|=\|&\|!\|-\|>\|\^\|\*\)"
+    hi link myOperators Operator
+    hi myOperators ctermfg=LightBlue
+    "hi Comment ctermfg=23
+endfunction
 
 " Statusline 
 
@@ -100,12 +118,12 @@ hi StatusLine ctermfg=8 ctermbg=3 cterm=NONE
 hi StatusLineNC ctermfg=2 ctermbg=8 cterm=NONE
 
 function! GitBranch()
-	return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+    return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
 endfunction
 
 function! StatuslineGit()
-	let l:branchname = GitBranch()
-	return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+    let l:branchname = GitBranch()
+    return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
 endfunction
 
 set statusline=

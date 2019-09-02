@@ -6,10 +6,16 @@ export TERM="xterm-256color"
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+# Vim bindkeys
+bindkey -v
+
+# Default editor
+export EDITOR=/usr/bin/vim
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="afowler"
 
 # Uncomment the following line to use case-sensitive completion.
 : CASE_SENSITIVE="true"
@@ -123,7 +129,9 @@ function cd
 # Example aliases
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias Franz="/opt/franz/Franz"
-alias here="gnome-terminal $PWD"
+alias here="xfce4-terminal $PWD"
+
+alias kctl="sudo keyboardctl -l"
 
 # git repos
 
@@ -137,6 +145,7 @@ alias zshconfig="vim ~/.zshrc"
 alias i3config="vim ~/.config/i3/config"
 alias polyconfig="vim ~/.config/polybar/config"
 alias rangerconfig="vim ~/.config/ranger/rc.conf"
+alias tmuxconfig="vim ~/.tmux.conf"
 
 # ssh 
 
@@ -144,5 +153,6 @@ alias sshuit="ssh -X ski027@lgserv3.stud.cs.uit.no"
 
 # directory shortcuts
 
-alias project4="cd /home/simenlk/Documents/UIT/2.år/2.sem/INF-2201/project-4-SimenLK"
-alias project5="cd /home/simenlk/Documents/UIT/2.år/2.sem/INF-2201/project-5-SimenLK"
+alias cpwd='echo `pwd` | xclip -selection clipboard'
+alias cdc='cd `xclip -o -selection c`'
+
