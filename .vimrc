@@ -1,5 +1,7 @@
 " This is a test comment
 execute pathogen#infect()
+
+set nocompatible
 filetype plugin indent on
 
 " Tap options - 4 spaces
@@ -7,9 +9,15 @@ set shiftwidth=4
 set tabstop=4
 set expandtab
 
+" If there are local vimrc
+set exrc
+
 " Indenting
 autocmd FileType c set cindent
 autocmd FileType haskell set smartindent
+
+" Set path to search folders from root to allow for fuzzy search
+set path+=**
 
 " Syntax highlighting
 syntax on
@@ -46,7 +54,10 @@ set splitbelow
 
 " Wildmenu
 " set wildmenu
-set wildmode=list:longest,full
+set wildmode=full
+
+" Commands
+command! MakeTags !ctags -R .
 
 " Latex settings
 " NB: Don't need it because of spell shortcuts
@@ -56,6 +67,7 @@ autocmd FileType tex setlocal wrap
 nnoremap <Tab> :bnext<CR>:redraw<CR>:ls<CR>
 nnoremap <s-Tab> :bprev<CR>:redraw<CR>:ls<CR>
 
+" Tmux
 let g:tmux_navigator_no_mappings = 1
 
 nnoremap <silent> <C-h> :TmuxNavigateLeft<CR>
@@ -63,6 +75,8 @@ nnoremap <silent> <C-j> :TmuxNavigateDown<CR>
 nnoremap <silent> <C-k> :TmuxNavigateUp<CR>
 nnoremap <silent> <C-l> :TmuxNavigateRight<CR>
 nnoremap <silent> <C-\> :TmuxNavigatePrevious<CR>
+
+nnoremap <silent> <Bar> <C-w><Bar><CR>
 
 map <C-N> :NERDTreeToggle<CR>
 
@@ -72,21 +86,22 @@ inoremap jk <Esc>
 map <F6> :setlocal spell! spelllang=en_us<CR>
 map <F7> :setlocal spell! spelllang=nb<CR>
 
-" Goyo
-map <F10> :Goyo<CR>
-
-" youcompleteme
-let g:ycm_min_num_of_chars_for_completion = 3
-" Temp, try again later
-let g:loaded_youcompleteme = 1
-
 " TeX shortcuts
 autocmd FileType tex nnoremap <C-b> :w<CR> :! pdflatex %<CR>
 
 " Not optimal when manually tabbing
 " autocmd FileType c inoremap <Tab><Tab> <Esc>/<++><Enter>"_c4l
 
-" C settings
+" Language specific
+
+" SQL
+
+autocmd FileType sql set shiftwidth=2
+autocmd FileType sql set tabstop=2
+autocmd FileType sql set expandtab
+
+" F#
+" Seems like standard is 4 spaces for the compiler
 
 " C snippets
 autocmd FileType c inoremap ,f <Esc>:-1read $HOME/.vim/skeleton/.forloop.c<CR>Vj=<Esc>f<la
@@ -98,17 +113,8 @@ autocmd FileType c inoremap ,s <Esc>:-1read $HOME/.vim/skeleton/.switch.c<CR>V16
 
 autocmd FileType c inoremap ,w while()<CR><++><Esc>kf(a
 
-" Highlighting
-
-"autocmd FileType c call <SID>def_base_syntax() " autocmd Syntax may be better
-
-function! s:def_base_syntax()
-    " Simple example
-    syntax match myOperators "\(\/\|+\|=\|&\|!\|-\|>\|\^\|\*\)"
-    hi link myOperators Operator
-    hi myOperators ctermfg=LightBlue
-    "hi Comment ctermfg=23
-endfunction
+" HTML
+nnoremap ,html :-1read $HOME/.vim/skeleton/.html<CR>3jf>a
 
 " Statusline 
 

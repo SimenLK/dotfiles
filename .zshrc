@@ -2,6 +2,13 @@ export TERM="xterm-256color"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+# Add bin to path
+path+=('/home/simenlk/bin')
+
+export path
+
+export DOTNET_ROOT=$HOME/dotnet
+export PATH=$PATH:$HOME/dotnet
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -10,7 +17,7 @@ export ZSH=$HOME/.oh-my-zsh
 bindkey -v
 
 # Default editor
-export EDITOR=/usr/bin/vim
+export EDITOR=/usr/bin/nvim
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -135,17 +142,18 @@ alias kctl="sudo keyboardctl -l"
 
 # git repos
 
-alias latexreport="git clone https://github.com/SimenLK/latexreport.git; cd latexreport; source install.sh"
+alias latexreport="git clone https://github.com/SimenLK/latexreport.git
+                    source latexreport/install.sh"
 alias dotfiles="git clone https://github.com/SimenLK/dotfiles.git"
 
 # Config shortcuts
 
-alias vimconfig="vim ~/.vimrc"
-alias zshconfig="vim ~/.zshrc"
-alias i3config="vim ~/.config/i3/config"
-alias polyconfig="vim ~/.config/polybar/config"
-alias rangerconfig="vim ~/.config/ranger/rc.conf"
-alias tmuxconfig="vim ~/.tmux.conf"
+alias vimconfig="$EDITOR ~/.vimrc"
+alias zshconfig="$EDITOR ~/.zshrc"
+alias i3config="$EDITOR ~/.config/i3/config"
+alias polyconfig="$EDITOR ~/.config/polybar/config"
+alias rangerconfig="$EDITOR ~/.config/ranger/rc.conf"
+alias tmuxconfig="$EDITOR ~/.tmux.conf"
 
 # ssh 
 
