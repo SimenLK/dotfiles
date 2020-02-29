@@ -3,6 +3,7 @@
 #+EMAIL: hello@harryrschwartz.com
 #+OPTIONS: toc:nil num:nil
 
+* Configure =use-package=
 
 I use =use-package= to install and configure my packages. My =init.el= includes
 the initial setup for =package.el= and ensures that =use-package= is installed,
@@ -34,6 +35,7 @@ Disable TLS 1.3; ELPA has higher standards. That'll be the default in Emacs
   (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 #+end_src
 
+* Use sensible-defaults.el
 
 Use [[https://github.com/hrs/sensible-defaults.el][sensible-defaults.el]] for some basic settings.
 
@@ -44,7 +46,9 @@ Use [[https://github.com/hrs/sensible-defaults.el][sensible-defaults.el]] for so
   (sensible-defaults/backup-to-temp-directory)
 #+end_src
 
+* Set personal information
 
+** Who am I? Where am I?
 
 #+begin_src emacs-lisp
   (setq user-full-name "Simen Lund Kirkvik"
@@ -59,6 +63,7 @@ Use [[https://github.com/hrs/sensible-defaults.el][sensible-defaults.el]] for so
   (add-to-list 'load-path "~/.emacs.d/resources/")
 #+end_src
 
+* =evil-mode=
 
 I'd prefer not to expand abbrevs when I hit escape. That's always jarring and
 usually not what I want. In particular, it makes working with Coq really
@@ -106,16 +111,7 @@ Use =evil= with Org agendas.
     (evil-org-agenda-set-keys))
 #+end_src
 
-I want to exit insert mode by hitting jk. I'm using the package key-chord to do this.
-
-#+begin_src emacs-lisp
-	(use-package key-chord
-		:config
-		(key-chord-mode 1)
-		(setq key-chord-two-keys-delay 0.5)
-		(key-chord-define evil-insert-state-map "jk" 'evil-normal-state))
-#+end_src
-
+* Utility functions
 
 Define a big ol' bunch of handy utility functions.
 
@@ -184,6 +180,8 @@ Define a big ol' bunch of handy utility functions.
      (format "notify-send -t 2000 \"%s\" \"%s\"" title message)))
 #+end_src
 
+* UI preferences
+** Tweak window chrome
 
 I don't usually use the menu or scroll bar, and they take up useful space.
 
@@ -207,6 +205,7 @@ project:
   (setq frame-title-format '((:eval (projectile-project-name))))
 #+end_src
 
+** Use fancy lambdas
 
 Why not?
 
@@ -214,6 +213,10 @@ Why not?
   (global-prettify-symbols-mode t)
 #+end_src
 
+** Load up a theme
+
+I'm currently using the "solarized-dark" theme. I've got a scenic wallpaper, so
+just a hint of transparency looks lovely and isn't distracting or hard to read.
 
 #+begin_src emacs-lisp
   (use-package solarized-theme
@@ -263,6 +266,7 @@ I'd rather skip it.
      (minions-mode 1))
 #+end_src
 
+** Disable visual bell
 
 =sensible-defaults= replaces the audible bell with a visual one, but I really
 don't even want that (and my Emacs/Mac pair renders it poorly). This disables
@@ -272,6 +276,7 @@ the bell altogether.
   (setq ring-bell-function 'ignore)
 #+end_src
 
+** Scroll conservatively
 
 When point goes outside the window, Emacs usually recenters the buffer point.
 I'm not crazy about that. This changes scrolling behavior to only scroll as far
@@ -290,6 +295,7 @@ pairing or presenting code.
   (global-hl-line-mode)
 #+end_src
 
+** Highlight uncommitted changes
 
 Use the =diff-hl= package to highlight changed-and-uncommitted lines when
 programming.
@@ -301,11 +307,13 @@ programming.
     (add-hook 'vc-dir-mode-hook 'turn-on-diff-hl-mode))
 #+end_src
 
+* Project management
 
 I use a few packages in virtually every programming or writing environment to
 manage the project, handle auto-completion, search for terms, and deal with
 version control. That's all in here.
 
+** =ripgrep=
 
 Install and configure [[https://github.com/Wilfred/deadgrep][deadgrep]] as an interface to =ripgrep=. I prefer =evil=
 bindings.
@@ -315,6 +323,7 @@ bindings.
     :config (evil-collection-deadgrep-setup))
 #+end_src
 
+** =company=
 
 Use =company-mode= everywhere.
 
@@ -329,6 +338,7 @@ Use =M-/= for completion.
   (global-set-key (kbd "M-/") 'company-complete-common)
 #+end_src
 
+** =dumb-jump=
 
 The =dumb-jump= package works well enough in a [[https://github.com/jacktasia/dumb-jump#supported-languages][ton of environments]], and it
 doesn't require any additional setup. I've bound its most useful command to
@@ -341,11 +351,14 @@ doesn't require any additional setup. I've bound its most useful command to
     (setq dumb-jump-selector 'ivy))
 #+end_src
 
+** =flycheck=
 
  #+begin_src emacs-lisp
    (use-package let-alist)
+   (use-package flycheck)
  #+end_src
 
+** =magit=
 
 I use =magit= to handle version control. It's lovely, but I tweak a few things:
 
@@ -391,6 +404,7 @@ history of a file.
   (use-package git-timemachine)
 #+end_src
 
+** =projectile=
 
 Projectile's default binding of =projectile-ag= to =C-c p s s= is clunky enough
 that I rarely use it (and forget it when I need it). This binds it to the
@@ -426,6 +440,7 @@ project root (if I'm not in a "real" project).
     (setq projectile-require-project-root nil))
 #+end_src
 
+** =undo-tree=
 
 I like tree-based undo management. I only rarely need it, but when I do, oh boy.
 
@@ -433,6 +448,7 @@ I like tree-based undo management. I only rarely need it, but when I do, oh boy.
   (use-package undo-tree)
 #+end_src
 
+* Programming environments
 
 I like shallow indentation, but tabs are displayed as 8 characters by default.
 This reduces that.
@@ -677,6 +693,7 @@ Quickly insert a block of elisp:
                '("el" . "src emacs-lisp"))
 #+end_src
 
+** Task and org-capture management
 
 Store my org files in =~/documents/org=, maintain an inbox in Dropbox, define
 the location of an index file (my main todo list), and archive finished tasks in
@@ -838,6 +855,7 @@ displaying the index, so they'll be in the agenda view, too.
   (global-set-key (kbd "C-c d") 'hrs/dashboard)
 #+end_src
 
+**** Capturing tasks
 
 Define a few common tasks as capture templates. Specifically, I frequently:
 
@@ -900,6 +918,7 @@ Refiling according to the document's hierarchy.
   (setq org-outline-path-complete-in-steps nil)
 #+end_src
 
+**** Keybindings
 
 Bind a few handy keys.
 
@@ -961,6 +980,7 @@ so these definitions are a lot of fun.
   (define-key global-map (kbd "C-x w") 'hrs/dictionary-define-word)
 #+end_src
 
+** Look up words in a thesaurus
 
 Hitting =C-x s= searches for synonyms for the word at point.
 
@@ -970,6 +990,7 @@ Hitting =C-x s= searches for synonyms for the word at point.
     ("C-x s" . powerthesaurus-lookup-word-dwim))
 #+end_src
 
+** Editing with Markdown
 
 Because I can't always use =org=.
 
@@ -989,6 +1010,7 @@ Because I can't always use =org=.
      '(markdown-code-face ((t nil)))))
 #+end_src
 
+** Wrap paragraphs automatically
 
 =AutoFillMode= automatically wraps paragraphs, kinda like hitting =M-q=. I wrap
 a lot of paragraphs, so this automatically wraps 'em when I'm writing text,
@@ -1000,6 +1022,7 @@ Markdown, or Org.
   (add-hook 'org-mode-hook 'auto-fill-mode)
 #+end_src
 
+** Cycle between spacing alternatives
 
 Successive calls to =cycle-spacing= rotate between changing the whitespace
 around point to:
@@ -1015,6 +1038,7 @@ Binding this to =M-SPC= is strictly better than the original binding of
   (global-set-key (kbd "M-SPC") 'cycle-spacing)
 #+end_src
 
+** Linting prose
 
 I use [[http://proselint.com/][proselint]] to check my prose for common errors. This creates a flycheck
 checker that runs proselint in texty buffers and displays my errors.
@@ -1045,12 +1069,14 @@ Use flycheck in the appropriate buffers:
   (add-hook 'org-mode-hook #'flycheck-mode)
 #+end_src
 
+** Enable region case modification
 
 #+begin_src emacs-lisp
   (put 'downcase-region 'disabled nil)
   (put 'upcase-region 'disabled nil)
 #+end_src
 
+** Quickly explore my "notes" directory with =deft=
 
 #+begin_src emacs-lisp
   (use-package deft
@@ -1065,6 +1091,7 @@ Use flycheck in the appropriate buffers:
     (evil-set-initial-state 'deft-mode 'emacs))
 #+end_src
 
+* File management with =dired=
 
 Hide dotfiles by default, but toggle their visibility with =.=.
 
@@ -1098,7 +1125,7 @@ files. We're using:
 - =l=: Use the long listing format.
 - =h=: Use human-readable sizes.
 - =v=: Sort numbers naturally.
-- =A=:
+- =A=: Almost all. Doesn't include "=.=" or "=..=".
 
 #+begin_src emacs-lisp
   (setq-default dired-listing-switches "-lhvA")
@@ -1152,7 +1179,9 @@ elsewhere in this repo).
   (evil-define-key 'normal dired-mode-map (kbd "v") 'hrs/dired-slideshow)
 #+end_src
 
+* Editing settings
 
+** Quickly visit Emacs configuration
 
 I futz around with my dotfiles a lot. This binds =C-c e= to quickly open my
 Emacs configuration file.
@@ -1165,6 +1194,7 @@ Emacs configuration file.
   (global-set-key (kbd "C-c e") 'hrs/visit-emacs-config)
 #+end_src
 
+** Always kill current buffer
 
 Assume that I always want to kill the current buffer when hitting =C-x k=.
 
@@ -1172,6 +1202,7 @@ Assume that I always want to kill the current buffer when hitting =C-x k=.
   (global-set-key (kbd "C-x k") 'hrs/kill-current-buffer)
 #+end_src
 
+** Set up =helpful=
 
 The =helpful= package provides, among other things, more context in Help
 buffers.
@@ -1185,11 +1216,13 @@ buffers.
   (evil-define-key 'normal helpful-mode-map (kbd "q") 'quit-window)
 #+end_src
 
+** Look for executables in =/usr/local/bin=
 
 #+begin_src emacs-lisp
   (hrs/append-to-path "/usr/local/bin")
 #+end_src
 
+** Save my location within a file
 
 Using =save-place-mode= saves the location of point for every file I visit. If I
 close the file or close the editor, then later re-open it, point will be at the
@@ -1199,6 +1232,7 @@ last place I visited.
   (save-place-mode t)
 #+end_src
 
+** Always indent with spaces
 
 Never use tabs. Tabs are the devil’s whitespace.
 
@@ -1206,6 +1240,7 @@ Never use tabs. Tabs are the devil’s whitespace.
   (setq-default indent-tabs-mode nil)
 #+end_src
 
+** Install and configure =which-key=
 
 =which-key= displays the possible completions for a long keybinding. That's
 really helpful for some modes (like =projectile=, for example).
@@ -1215,6 +1250,7 @@ really helpful for some modes (like =projectile=, for example).
     :config (which-key-mode))
 #+end_src
 
+** Configure =yasnippet=
 
 #+begin_src emacs-lisp
   (use-package yasnippet)
@@ -1236,6 +1272,7 @@ at the correct indentation for Python).
   (setq yas/indent-line nil)
 #+end_src
 
+** Configure =ivy= and =counsel=
 
 I use =ivy= and =counsel= as my completion framework.
 
@@ -1267,6 +1304,7 @@ This configuration:
             (t . ivy--regex-fuzzy))))
 #+end_src
 
+** Switch and rebalance windows when splitting
 
 When splitting a window, I invariably want to switch to the new window. This
 makes that automatic.
@@ -1290,6 +1328,7 @@ makes that automatic.
   (global-set-key (kbd "C-x 3") 'hrs/split-window-right-and-switch)
 #+end_src
 
+** Mass editing of =grep= results
 
 I like the idea of mass editing =grep= results the same way I can edit filenames
 in =dired=. These keybindings allow me to use =C-x C-q= to start editing =grep=
@@ -1309,11 +1348,13 @@ results and =C-c C-c= to stop, just like in =dired=.
   (setq wgrep-auto-save-buffer t)
 #+end_src
 
+** Use projectile everywhere
 
 #+begin_src emacs-lisp
   (projectile-global-mode)
 #+end_src
 
+** Add a bunch of engines for =engine-mode=
 
 Enable [[https://github.com/hrs/engine-mode][engine-mode]] and define a few useful engines.
 
@@ -1352,6 +1393,7 @@ Enable [[https://github.com/hrs/engine-mode][engine-mode]] and define a few usef
   (engine-mode t)
 #+end_src
 
+* Set custom keybindings
 
 Just a few handy functions.
 
