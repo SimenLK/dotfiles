@@ -215,9 +215,6 @@ Why not?
 #+end_src
 
 
-I'm currently using the "solarized-dark" theme. I've got a scenic wallpaper, so
-just a hint of transparency looks lovely and isn't distracting or hard to read.
-
 #+begin_src emacs-lisp
   (use-package solarized-theme
     :config
@@ -225,15 +222,7 @@ just a hint of transparency looks lovely and isn't distracting or hard to read.
           solarized-height-plus-1 1.0
           solarized-height-plus-2 1.0
           solarized-height-plus-3 1.0
-          solarized-height-plus-4 1.0)
-
-    (let ((line (face-attribute 'mode-line :underline)))
-      (set-face-attribute 'mode-line          nil :overline   line)
-      (set-face-attribute 'mode-line-inactive nil :overline   line)
-      (set-face-attribute 'mode-line-inactive nil :underline  line)
-      (set-face-attribute 'mode-line          nil :box        nil)
-      (set-face-attribute 'mode-line-inactive nil :box        nil)
-      (set-face-attribute 'mode-line-inactive nil :background "#f9f2d9")))
+          solarized-height-plus-4 1.0))
 
   (defun transparency (value)
     "Sets the transparency of the frame window. 0=transparent/100=opaque."
@@ -241,9 +230,9 @@ just a hint of transparency looks lovely and isn't distracting or hard to read.
     (set-frame-parameter (selected-frame) 'alpha value))
 
   (defun hrs/apply-theme ()
-    "Apply the `solarized-dark' theme and make frames just slightly transparent."
+    "Apply the theme"
     (interactive)
-    (load-theme 'solarized-dark t)
+    (load-theme 'solarized-light-high-contrast t)
     (transparency 100))
 #+end_src
 
@@ -256,17 +245,6 @@ frame is themed appropriately.
                 (lambda (frame)
                   (with-selected-frame frame (hrs/apply-theme))))
     (hrs/apply-theme))
-#+end_src
-
-
-This gives me a truly lovely ribbon-based modeline.
-
-#+begin_src emacs-lisp
-  (use-package moody
-    :config
-    (setq x-underline-at-descent-line t)
-    (moody-replace-mode-line-buffer-identification)
-    (moody-replace-vc-mode))
 #+end_src
 
 
@@ -606,7 +584,7 @@ My personal F# config
 #+end_src
 
 #+begin_src emacs-lisp
-	(use-package eglot)
+	(require 'eglot-fsharp)
 #+end_src
 
 
@@ -621,6 +599,7 @@ Use a login =bash= shell:
 
 #+begin_src emacs-lisp
   (setq multi-term-program-switches "--login")
+  (setq system-uses-terminfo nil)
 #+end_src
 
 I'd rather not use Evil in the terminal. It's not especially useful (I don't use
@@ -959,6 +938,7 @@ Hit =M-n= to quickly open up a capture template for a new todo.
 #+end_src
 
 
+
 I look up definitions by hitting =C-x w=, which shells out to =sdcv=. I've
 loaded that with the (beautifully lyrical) 1913 edition of Webster's dictionary,
 so these definitions are a lot of fun.
@@ -1118,7 +1098,7 @@ files. We're using:
 - =l=: Use the long listing format.
 - =h=: Use human-readable sizes.
 - =v=: Sort numbers naturally.
-- =A=: Almost all. Doesn't include "=.=" or "=..=".
+- =A=:
 
 #+begin_src emacs-lisp
   (setq-default dired-listing-switches "-lhvA")
@@ -1154,11 +1134,10 @@ This uses =emacs-async= to make =dired= perform actions asynchronously.
     (dired-async-mode 1))
 #+end_src
 
-Use "j" and "k" to move around in =dired=.
+Enter emacs mode in dired
 
 #+begin_src emacs-lisp
-  (evil-define-key 'normal dired-mode-map (kbd "j") 'dired-next-line)
-  (evil-define-key 'normal dired-mode-map (kbd "k") 'dired-previous-line)
+  (evil-set-initial-state 'dired-mode 'emacs)
 #+end_src
 
 I'm often browsing directories of photos and images, so this binds "v" to view a
